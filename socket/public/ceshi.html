@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    拿到静态
+    <script>
+        const ws = new WebSocket('ws://localhost:8080');
+
+        ws.onopen = () => {
+            console.log('服务器连接成功------');
+        }
+
+        ws.onmessage = (msg) => {
+            console.log('msg---', msg.data);
+        }
+
+        ws.onerror = () => {
+            console.log('on erro');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    *********** home的ejs页面 ***********
+    <ul>
+        <!-- <li><%= dataList[0]%></li> -->
+        <%for(let i = 0; i < dataList.length; i++) {%>
+            <li><%= dataList[i]%></li>
+        <% }%>
+    </ul>
+
+    <div>最新消息- <%= myHtml%></div>
+    <div>最新消息- <%- myHtml%></div>
+</body>
+</html>

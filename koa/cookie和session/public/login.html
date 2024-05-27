@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+<body>
+    <div>用户名： <input type="text" id="username"></div>
+    <div>密码： <input type="password" id="password"></div>
+    <button id="login">登录</button>
+
+    <script>
+        const username = document.querySelector('#username');
+        const password = document.querySelector('#password');
+        const btn = document.querySelector('#login');
+
+        btn.onclick = () => {
+            // fetch(`/user?username=${username.value}&password=${password.value}`).then(res => res.text()).then(res => {
+            //     console.log('登录get返回----', res);
+            // });
+
+            // post请求
+            // fetch('/user', {
+            //     method: 'POST',
+            //     body: JSON.stringify({
+            //         username: username.value,
+            //         password: password.value
+            //     }),
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // }).then(res => res.text()).then(res => {
+            //     console.log('post请求返回----', res);
+            // })
+
+            fetch('/user', {
+                method: 'POST',
+                body: `username=${username.value}&password=${password.value}`,
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            }).then(res => res.text()).then(res => {
+                console.log('post请求返回----', res);
+            })
+        }
+
+    </script>
+</body>
+</html>
